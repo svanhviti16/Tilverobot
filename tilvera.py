@@ -1,6 +1,7 @@
 
 from random import choice
-import sys
+import sys, tweepy, requests
+
 
 # Accepts .txt files as N parameters
 # Outputs random words from the files in a sentence
@@ -12,3 +13,5 @@ with open(sys.argv[1], encoding="utf-8") as lo_hk, open(sys.argv[2], encoding="u
 print(f'Tilvera okkar er {choice(lo_list)} {choice(no_hk_list)}. Við erum {choice(no_kk_list)} og {choice(no_hk_list)} okkar er {choice(no_hk_list)}.')
 #Tilvera okkar er hálflofað tuskuílag. Við erum hitahlaup og hljóðfræðirit okkar er hallklæmt.
 #Tilvera okkar er handfornskt músamálverk. Við erum óhrím og akurpúlt okkar er varfeilmult.
+#Tilvera okkar er horfautt smit. Við erum slefudrættir og fransvín okkar er goslíki.
+#Tilvera okkar er hráeygt þæginöl. Við erum dyrabitar og ullarmerki okkar er fjölskylduverkalyf.
