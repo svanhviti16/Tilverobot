@@ -1,1 +1,1 @@
-worker: python3 tilvera.py
+worker: python tilvera.py
