@@ -1,6 +1,7 @@
 from random import choice
 from credentials import *
 import sys, tweepy, requests
+from os import environ
 
 # Accepts 3 .txt file parameters
 with open(sys.argv[1], encoding="utf-8") as lo_hk, open(sys.argv[2], encoding="utf-8") as no_hk, open(sys.argv[3], encoding="utf-8") as no_kk:
@@ -9,8 +10,14 @@ with open(sys.argv[1], encoding="utf-8") as lo_hk, open(sys.argv[2], encoding="u
     no_kk_list = [word.strip() for word in no_kk]
 
 def tweet_the_thing(tweet):
-    tw_auth = tweepy.OAuthHandler(twitter_consumer_key, twitter_consumer_secret)
-    tw_auth.set_access_token(twitter_access_token, twitter_access_token_secret)
+
+    CONSUMER_KEY = environ['CONSUMER_KEY']
+    CONSUMER_SECRET = environ['CONSUMER_SECRET']
+    ACCESS_KEY = environ['ACCESS_KEY']
+    ACCESS_SECRET = environ['ACCESS_SECRET']
+    
+    tw_auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
+    tw_auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
     tw_api = tweepy.API(tw_auth)
     tw_api.update_status(tweet)
     print(tweet)
