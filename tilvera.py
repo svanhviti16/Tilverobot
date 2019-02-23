@@ -1,5 +1,5 @@
 from random import choice
-import sys, tweepy, requests
+import sys, tweepy
 from os import environ
 
 # Accepts 3 .txt file parameters
