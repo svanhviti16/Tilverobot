@@ -1,5 +1,4 @@
 from random import choice
-from credentials import *
 import sys, tweepy, requests
 from os import environ
 
@@ -15,7 +14,7 @@ def tweet_the_thing(tweet):
     CONSUMER_SECRET = environ['CONSUMER_SECRET']
     ACCESS_KEY = environ['ACCESS_KEY']
     ACCESS_SECRET = environ['ACCESS_SECRET']
-    
+
     tw_auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
     tw_auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
     tw_api = tweepy.API(tw_auth)
