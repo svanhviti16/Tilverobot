@@ -26,5 +26,4 @@ def tweet_the_thing(tweet):
 def getTweet():
     return f'Tilvera okkar er {choice(lo_list)} {choice(no_hk_list)}. Við erum {choice(no_ft_list)} og {choice(no_et_list)} okkar er {choice(no_et_list)}.'
 
-#tweet_the_thing(getTweet())
-print(getTweet())
+tweet_the_thing(getTweet())
