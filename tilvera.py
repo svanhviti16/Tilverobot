@@ -25,7 +25,7 @@ def tweet_the_thing(tweet):
 def getTweet():
     return f'Tilvera okkar er {choice(lo_list)} {choice(no_hk_list)}. Við erum {choice(no_ft_list)} og {choice(no_et_list)} okkar er {choice(no_et_list)}.'
 
-# Onlys posts once every three hours 
+# Only posts once every three hours 
 a = time.localtime()
 if a.tm_hour % 3 == 0:
     tweet_the_thing(getTweet())
