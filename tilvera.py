@@ -1,5 +1,5 @@
 from random import choice
-import sys, tweepy
+import sys, tweepy, time
 from os import environ
 
 # Accepts 3 .txt file parameters
@@ -10,7 +10,6 @@ with open(sys.argv[1], encoding="utf-8") as lo_hk, open(sys.argv[2], encoding="u
     no_et_list = [word.strip() for word in no_et]
 
 def tweet_the_thing(tweet):
-
     CONSUMER_KEY = environ['CONSUMER_KEY']
     CONSUMER_SECRET = environ['CONSUMER_SECRET']
     ACCESS_KEY = environ['ACCESS_KEY']
@@ -26,4 +25,7 @@ def tweet_the_thing(tweet):
 def getTweet():
     return f'Tilvera okkar er {choice(lo_list)} {choice(no_hk_list)}. Við erum {choice(no_ft_list)} og {choice(no_et_list)} okkar er {choice(no_et_list)}.'
 
-tweet_the_thing(getTweet())
+# Onlys posts once every three hours 
+a = time.localtime()
+if a.tm_hour % 3 == 0:
+    tweet_the_thing(getTweet())
