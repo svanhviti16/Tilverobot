@@ -3,10 +3,11 @@ import sys, tweepy
 from os import environ
 
 # Accepts 3 .txt file parameters
-with open(sys.argv[1], encoding="utf-8") as lo_hk, open(sys.argv[2], encoding="utf-8") as no_hk, open(sys.argv[3], encoding="utf-8") as no_kk:
+with open(sys.argv[1], encoding="utf-8") as lo_hk, open(sys.argv[2], encoding="utf-8") as no_hk, open(sys.argv[3], encoding="utf-8") as no_ft, open(sys.argv[4], encoding="utf-8") as no_et:
     lo_list = [word.strip() for word in lo_hk]
     no_hk_list = [word.strip() for word in no_hk]
-    no_kk_list = [word.strip() for word in no_kk]
+    no_ft_list = [word.strip() for word in no_ft]
+    no_et_list = [word.strip() for word in no_et]
 
 def tweet_the_thing(tweet):
 
@@ -23,6 +24,7 @@ def tweet_the_thing(tweet):
 
 # Outputs random words from the files in a sentence
 def getTweet():
-    return f'Tilvera okkar er {choice(lo_list)} {choice(no_hk_list)}. Við erum {choice(no_kk_list)} og {choice(no_hk_list)} okkar er {choice(no_hk_list)}.'
+    return f'Tilvera okkar er {choice(lo_list)} {choice(no_hk_list)}. Við erum {choice(no_ft_list)} og {choice(no_et_list)} okkar er {choice(no_et_list)}.'
 
-tweet_the_thing(getTweet())
+#tweet_the_thing(getTweet())
+print(getTweet())
